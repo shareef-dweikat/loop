@@ -1,26 +1,52 @@
 import React from 'react';
-import { StyleSheet, TextInput,ImageBackground, KeyboardAvoidingView,View,Text,Button ,Image} from 'react-native';
-
+import { StyleSheet, TextInput,ImageBackground, KeyboardAvoidingView,View,Text,Button ,Image ,Alert} from 'react-native';
+import dummy_user from '../dummy'
 
 
 export default class Login extends React.Component {
 
   state={
-    phone:'',
-    password:'' 
+    email:'',
+    password:''
   }
 
   componentWillMount (){
     
   }
+ 
+  handleClick () {
+      let response = {}
+      if(!this.state.email && !this.state.password) { 
+          response = {alert: "Please enter email and password", alertType: 'error'};
+      } else {
+          if(this.state.email == dummy_user.email && this.state.password == dummy_user.password) {
+            response = {alert: "Logged in successfully" ,alertType: 'sucess'}
+          } else {
+            response = {alert: "Wrong username or password", alertType: 'error'}
+          }
+      }
+      Alert.alert(
+        response.alertType,
+        response.alert,
+        [
+          {
+            text: 'Ok',
+            onPress: () => console.log('Ok Pressed'),
+            style: response.alertType,
+          }
+        ],
+        {cancelable: false},
+      );
 
+  }
   render() {
     return (
       <KeyboardAvoidingView style={{flex:1}} behavior="padding">
       
-      <ImageBackground source={require('./../assets/pexels-photo-949587.jpeg')} style={styles.container}>
+      <ImageBackground source={require('./../assets/login_bg.jpg')} style={styles.container}>
+        
         <View style={{flexDirection:"row",justifyContent:"center"}}>
-            <Image  source={require('../assets/icon.png')} style={{marginTop:30,height:150}}/>
+            <Image  source={require('../assets/loop.png')} style={{marginTop:30,height:120,width: 120}}/>
         </View>  
 
          <TextInput style = {styles.input}
@@ -38,7 +64,8 @@ export default class Login extends React.Component {
                secureTextEntry={true}
                onChangeText={(value)=>this.setState({password:value})}
                />
-               <Button title="Log in" onPress={()=>this.handleClick()}/>
+               <Button title="Log in" color="#3344ff" style={styles.button} accessibilityLabel="Press to login" 
+               onPress={()=>this.handleClick()}/>
                </ImageBackground>
 
       
@@ -55,12 +82,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   input: {
-    padding:8,
+    paddingLeft: 6,
     margin: 15,
-    height: 40,
-    width:"80%",
-    borderColor: '#7a42f4',
-    borderWidth: 1,
-    backgroundColor:"white"
+    height: 60,
+    width: "90%",
+    backgroundColor:"white",
+    color: '#3344ff',
+    borderColor: '#9999ff',
+    borderWidth: 3,
+    fontSize: 20
  },
+ button: { 
+    width: 120,
+    backgroundColor: "#3344ff"
+ }
 });
