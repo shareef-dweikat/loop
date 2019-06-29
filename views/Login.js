@@ -15,12 +15,14 @@ export default class Login extends React.Component {
   }
  
   handleClick () {
+    
       let response = {}
       if(!this.state.email && !this.state.password) { 
           response = {alert: "Please enter email and password", alertType: 'error'};
       } else {
           if(this.state.email == dummy_user.email && this.state.password == dummy_user.password) {
-            response = {alert: "Logged in successfully" ,alertType: 'sucess'}
+            // response = {alert: "Logged in successfully" ,alertType: 'sucess'}
+            this.props.navigation.navigate('Home')
           } else {
             response = {alert: "Wrong username or password", alertType: 'error'}
           }
@@ -54,7 +56,7 @@ export default class Login extends React.Component {
                placeholderTextColor = "#9a73ef"
                autoCapitalize = "none"
                value={this.state.phone}
-               onChangeText={(value)=>this.setState({phone:value})}
+               onChangeText={(value)=>this.setState({email:value})}
                />
             
             <TextInput style = {styles.input}

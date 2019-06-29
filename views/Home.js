@@ -1,10 +1,12 @@
 import React from 'react';
-import { StyleSheet, TextInput,ImageBackground, KeyboardAvoidingView,View,Text,Button ,Image} from 'react-native';
+import {ScrollView, StyleSheet, TextInput,ImageBackground, KeyboardAvoidingView,View,Text,Button ,Image} from 'react-native';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 import UserProfile from './UserProfile'
 import Login from './Login'
 import StatusBox from '../components/StatusBox';
+import Post from '../components/Post';
+import {postsList} from '../dummy'
 
 class Home extends React.Component {
 
@@ -18,11 +20,20 @@ class Home extends React.Component {
   }
 
   render() {
+
+    let posts= postsList.map((item)=><Post/>)
+
     return (
-     <View style={{marginTop:50}}>
-         
+      <ScrollView>
+     <View style={{margin:20,marginTop:50}}>
+     
         <StatusBox/>
+
+        {posts}
+        {posts}
+        
      </View>
+     </ScrollView>
     )
   }
 }

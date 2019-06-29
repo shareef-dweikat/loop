@@ -48,8 +48,6 @@ const styles = StyleSheet.create({
     elevation: 1,
     borderRadius:5,
    
-    margin:25,
-    marginBottom:4
   }
  
 });

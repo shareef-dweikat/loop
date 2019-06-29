@@ -6,7 +6,22 @@ import Home from './views/Home'
 
 const MainNavigator = createStackNavigator({
   Home: {screen: Home,navigationOptions:()=>({
-  header:null
+   
+    title:"Home",
+    headerStyle:{
+    backgroundColor:"#428bca",
+
+    },
+    headerTitleStyle: { 
+      textAlign:"center", 
+      flex:1,
+      color:"white"
+  },
+    }),
+  },
+  Login: {screen: Login,navigationOptions:()=>({
+  header:null,
+  
   })},
  
 });
