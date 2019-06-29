@@ -47,13 +47,14 @@ export default class Login extends React.Component {
       
       <ImageBackground source={require('./../assets/login_bg.jpg')} style={styles.container}>
         
-        <View style={{flexDirection:"row",justifyContent:"center"}}>
-            <Image  source={require('../assets/loop.png')} style={{marginTop:30,height:120,width: 120}}/>
+        <View style={{justifyContent:"center"}}>
+            <Image  source={require('../assets/loop.png')} style={{marginTop:30,height:150,width: 150}}/>
+            <Text style={{textAlign:'center', fontSize: 24, color: 'white'}}>L00P</Text>
         </View>  
 
          <TextInput style = {styles.input}
-               placeholder = "Phone"
-               placeholderTextColor = "#9a73ef"
+               placeholder = "Email"
+               placeholderTextColor = "#428baa"
                autoCapitalize = "none"
                value={this.state.phone}
                onChangeText={(value)=>this.setState({email:value})}
@@ -61,13 +62,15 @@ export default class Login extends React.Component {
             
             <TextInput style = {styles.input}
                placeholder = "Password"
-               placeholderTextColor = "#9a73ef"
+               placeholderTextColor = "#428baa"
                value={this.state.password}
                secureTextEntry={true}
                onChangeText={(value)=>this.setState({password:value})}
                />
-               <Button title="Log in" color="#3344ff" style={styles.button} accessibilityLabel="Press to login" 
-               onPress={()=>this.handleClick()}/>
+               <View style={styles.button}>
+                <Button title="Log in" color="#428bca" accessibilityLabel="Press to login" 
+                onPress={()=>this.handleClick()}/>
+               </View>
                </ImageBackground>
 
       
@@ -84,18 +87,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   input: {
-    paddingLeft: 6,
+    paddingLeft: 10,
     margin: 15,
     height: 60,
     width: "90%",
     backgroundColor:"white",
-    color: '#3344ff',
-    borderColor: '#9999ff',
+    color: '#333',
+    borderColor: '#428bca',
     borderWidth: 3,
     fontSize: 20
  },
  button: { 
-    width: 120,
-    backgroundColor: "#3344ff"
+    width: '90%',
+    backgroundColor: "#428bca"
  }
 });
