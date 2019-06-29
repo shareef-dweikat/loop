@@ -29,22 +29,27 @@ export let user_info = {
         {
             key: '1',
             avatar: 'football.png',
-            title: 'football'
+            title: 'Football'
         },
         {
             key: '2',
             avatar: 'programming.png',
-            title: 'conding'
+            title: 'Conding'
         },
         {
             key: '3',
             avatar: 'writer.png',
-            title: 'writing'
+            title: 'Writing'
         },
         {
             key: '4',
             avatar: 'tech.png',
-            title: 'techologies'
+            title: 'Technologies'
+        },
+        {
+            key: '5',
+            avatar: 'tech.png',
+            title: 'Food'
         }
     ],
     role: 'Software Engineering / Asal Tech',
