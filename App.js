@@ -20,6 +20,7 @@ const MainNavigator = createStackNavigator({
     }),
   },
   Login: {screen: Login,navigationOptions:()=>({
+    title:"Login",
   header:null,
   
   })},
