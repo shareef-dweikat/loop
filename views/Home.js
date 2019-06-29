@@ -4,6 +4,7 @@ import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 import UserProfile from './UserProfile'
 import Login from './Login'
+import StatusBox from '../components/StatusBox';
 
 class Home extends React.Component {
 
@@ -18,7 +19,10 @@ class Home extends React.Component {
 
   render() {
     return (
-     <View></View>
+     <View style={{marginTop:50}}>
+         
+        <StatusBox/>
+     </View>
     )
   }
 }
