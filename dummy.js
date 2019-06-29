@@ -37,20 +37,26 @@ export let user_info = {
             title: 'Conding'
         },
         {
-            key: '3',
-            avatar: 'writer.png',
-            title: 'Writing'
-        },
-        {
             key: '4',
             avatar: 'tech.png',
             title: 'Technologies'
         },
         {
+            key: '3',
+            avatar: 'writer.png',
+            title: 'Food'
+        },
+        {
             key: '5',
             avatar: 'tech.png',
             title: 'Food'
-        }
+        },
+        {
+            key: '6',
+            avatar: 'tech.png',
+            title: 'Food again'
+        },
+
     ],
     role: 'Software Engineering / Asal Tech',
 
