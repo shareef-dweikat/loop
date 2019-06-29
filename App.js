@@ -2,9 +2,10 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 import Login from './views/Login'
- 
+import Home from './views/Home'
+
 const MainNavigator = createStackNavigator({
-  Login: {screen: Login,navigationOptions:()=>({
+  Home: {screen: Home,navigationOptions:()=>({
   header:null
   })},
  
