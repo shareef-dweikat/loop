@@ -20,3 +20,33 @@ export let postsList =[
     }
 ]
 
+export let user_info = {
+    username: 'Anas Shami',
+    email: 'hacker@email.com',
+    avatar: 'user.png',
+    birthdate: '18/10/1994',
+    interest: [
+        {
+            key: '1',
+            avatar: 'football.png',
+            title: 'football'
+        },
+        {
+            key: '2',
+            avatar: 'programming.png',
+            title: 'conding'
+        },
+        {
+            key: '3',
+            avatar: 'writer.png',
+            title: 'writing'
+        },
+        {
+            key: '4',
+            avatar: 'tech.png',
+            title: 'techologies'
+        }
+    ],
+    role: 'Software Engineering / Asal Tech',
+
+}
